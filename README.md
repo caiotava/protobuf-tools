@@ -2,8 +2,8 @@
 
 A docker image with protobuf and a handful set of plugins.
 
-[![](https://images.microbadger.com/badges/image/brennovich/protobuf-tools.svg)](https://microbadger.com/images/brennovich/protobuf-tools "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/brennovich/protobuf-tools.svg)](https://microbadger.com/images/brennovich/protobuf-tools "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own version badge on microbadger.com")
 
 ## Motivation
 
@@ -35,9 +35,9 @@ cd ~/my-protos
 
 docker run \
   --name my-protos
-  -v `pwd`:/my-protos:ro \
+  -v ${PWD}:/my-protos:ro \
   -w /my-protos \
-  --rm -it brennovich/protobuf-tools:latest protoc --doc_out=html,index.html:/build *.proto
+  --rm -it vivareal/protobuf-tools:latest protoc --doc_out=html,index.html:/build *.proto
 
 # Make sure to use docker cp instead of writing in mounted folder, it avoid permissions issues and is much more flexible
 docker cp my-protos:/build compiled-protos
@@ -52,7 +52,7 @@ All of that can be done using makefile:
 
 ```
 make test # this will build a docker image of current HEAD and run plugins and extensions
-make release RELEASE=3.0.0 # build a docker iamge, tag and publish it to brennovich/protobuf-tools docker hub repo
+make release RELEASE=3.0.0 # build a docker image, tag and publish it to vivareal/protobuf-tools docker hub repo
 ```
 
 Checkout `[Makefile]` for more tasks ;)

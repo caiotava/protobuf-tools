@@ -1,7 +1,7 @@
 FIXTURES=fixtures/today.proto
 TAG?=$(shell git rev-parse --short HEAD)
 
-protobuf-tools = @docker run --rm -v `pwd`:/proto-sources:ro -w /proto-sources brennovich/protobuf-tools:$(TAG)
+protobuf-tools = @docker run --rm -v ${PWD}:/proto-sources:ro -w /proto-sources vivareal/protobuf-tools:$(TAG)
 
 test/python:
 	@echo "Building for python..."
@@ -30,11 +30,11 @@ test/index.html: ${FIXTURES}
 test: docker/build test/go test/java test/scala test/python test/js test/index.html
 
 docker/build:
-	docker build --tag brennovich/protobuf-tools:$(TAG) .
+	docker build --tag vivareal/protobuf-tools:$(TAG) .
 
 docker/release: docker/build
 	git tag v$(RELEASE) && git push --tags
-	docker tag brennovich/protobuf-tools:$(TAG) brennovich/protobuf-tools:latest
-	docker tag brennovich/protobuf-tools:$(TAG) brennovich/protobuf-tools:$(RELEASE)
-	docker push brennovich/protobuf-tools:$(RELEASE)
-	docker push brennovich/protobuf-tools:latest
+	docker tag vivareal/protobuf-tools:$(TAG) vivareal/protobuf-tools:latest
+	docker tag vivareal/protobuf-tools:$(TAG) vivareal/protobuf-tools:$(RELEASE)
+	docker push vivareal/protobuf-tools:$(RELEASE)
+	docker push vivareal/protobuf-tools:latest
