@@ -26,9 +26,9 @@ jobs:
 
 workflows:
   version: 2
-  continuous_deploy:
+  continuous_integration:
     jobs:
-      - build
+      - build:
           filters:
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]{1,3}(-(alpha|beta|rc)?(\.[0-9])?)?$/
