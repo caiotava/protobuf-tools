@@ -39,27 +39,27 @@ docker run \
   -w /my-protos \
   --rm -it vivareal/protobuf-tools:latest protoc --doc_out=html,index.html:/build *.proto
 
-# Make sure to use docker cp instead of writing in mounted folder, it avoid permissions issues and is much more flexible
+# Make sure to use docker cp instead of writing in the mounted folder, it avoids permissions issues and is much more flexible
 docker cp my-protos:/build compiled-protos
 docker rm my-protos
 ```
 
 For more examples compiling for various languages look `[Makefile]
 
-## Test, buid & release
+## Test & build
 
 All of that can be done using makefile:
 
 ```
-make test # this will build a docker image of current HEAD and run plugins and extensions
-make docker-build # build the docker image for .
+make test # this will build a Docker image of current HEAD and run plugins and extensions
+make docker-build # build the docker image locally.
 ```
 
-Checkout `[Makefile]` for more tasks ;)
+Check out `[Makefile]` for more tasks ;)
 
 ## Contributing
 
 1. Fork it
 2. Fix, or add your feature in a new branch
-3. Open up a Pull Request against this repo with an useful description
-4. Try to stick with formating conventions already used in the files
+3. Open up a Pull Request against this repo with a useful description
+4. Try to stick with formatting conventions already used in the files
