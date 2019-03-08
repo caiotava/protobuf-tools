@@ -1,24 +1,20 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: buildpack-deps
+    machine:
+      image: circleci/classic
 
     steps:
       - checkout
-
-      - setup_remote_docker
 
       - run: make docker-build
 
   push:
-    docker:
-      - image: buildpack-deps
+    machine:
+      image: circleci/classic
 
     steps:
       - checkout
-
-      - setup_remote_docker
 
       - run:
         name: docker hub login
