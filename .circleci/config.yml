@@ -10,7 +10,7 @@ jobs:
       - setup_remote_docker:
         docker_layer_caching: true
 
-      - run: make docker/build
+      - run: make docker-build
   push:
     docker:
       - image: debian:stretch
@@ -27,7 +27,7 @@ jobs:
 
       - run:
         name: build and push image
-        command: make docker/release
+        command: make docker-push
 
 workflows:
   version: 2
@@ -37,4 +37,9 @@ workflows:
       - push:
           requires:
             - build
+          filters:
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]{1,3}(-(alpha|beta|rc)?(\.[0-9])?)?$/
+            branches:
+              ignore: /.*/
 
