@@ -2,8 +2,8 @@
 
 A docker image with protobuf and a handful set of plugins.
 
-[![](https://images.microbadger.com/badges/version/caiotava/protobuf-tools.svg)](https://microbadger.com/images/caiotava/protobuf-tools "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/caiotava/protobuf-tools.svg)](https://microbadger.com/images/caiotava/protobuf-tools "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own image badge on microbadger.com")
 
 ## Motivation
 

@@ -1,6 +1,6 @@
 FIXTURES=fixtures/today.proto
 TAG?=$(shell git rev-parse --short HEAD)
-VENDOR=caiotava
+VENDOR=vivareal
 
 protobuf-tools = @docker run --rm -v ${PWD}:/proto-sources:ro -w /proto-sources vivareal/protobuf-tools:$(TAG)
 
