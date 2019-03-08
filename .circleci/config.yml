@@ -18,7 +18,7 @@ jobs:
 
       - run:
           name: docker hub login
-          command: docker login -u $DOCKER_USER -o $DOCKER_PASSWORD
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       - run:
           name: build and push image
