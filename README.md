@@ -2,13 +2,13 @@
 
 A docker image with protobuf and a handful set of plugins.
 
-[![](https://images.microbadger.com/badges/image/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/vivareal/protobuf-tools.svg)](https://microbadger.com/images/vivareal/protobuf-tools "Get your own version badge on microbadger.com")
+[![](https://`images.microbadger.com/badges/image/vivareal/protobuf-tools.svg)](https://microbadger.com/images/caiotava/protobuf-tools "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/vivareal/protobuf-tools.svg)](https://microbadger.com/images/caiotava/protobuf-tools "Get your own version badge on microbadger.com")
 
 ## Motivation
 
 The whole idea is to provide an easy-almost-no-setup way to generate resources and documentation
-from `proto`s.
+from `protos`.
 
 ## Dependencies
 
@@ -52,7 +52,7 @@ All of that can be done using makefile:
 
 ```
 make test # this will build a docker image of current HEAD and run plugins and extensions
-make release RELEASE=3.0.0 # build a docker image, tag and publish it to vivareal/protobuf-tools docker hub repo
+make docker-build # build the docker image for .
 ```
 
 Checkout `[Makefile]` for more tasks ;)
