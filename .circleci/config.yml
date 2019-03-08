@@ -17,12 +17,12 @@ jobs:
       - checkout
 
       - run:
-        name: docker hub login
-        command: docker login -u $DOCKER_USER -o $DOCKER_PASSWORD
+          name: docker hub login
+          command: docker login -u $DOCKER_USER -o $DOCKER_PASSWORD
 
       - run:
-        name: build and push image
-        command: make docker-push
+          name: build and push image
+          command: make docker-push
 
 workflows:
   version: 2
