@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - setup_remote_docker:
+        docker_layer_caching: true
+
+      - run: make docker/build
+  push:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - setup_remote_docker:
+        docker_layer_caching: true
+
+      - run:
+        name: docker hub login
+        command: docker login -u $DOCKER_USER -o $DOCKER_PASSWORD
+
+      - run:
+        name: build and push image
+        command: make docker/release
+
+workflows:
+  version: 2
+  continuous_deploy:
+    jobs:
+      - build
+      - push:
+          requires:
+            - build
+
